@@ -42,6 +42,15 @@ func ConfigFromEnv(getenv func(string) string) (Config, error) {
 	return cfg, nil
 }
 
+// LogValue makes Config a slog.LogValuer, so logging the configuration at start-up
+// writes it as one group: addr and log_level.
+func (c Config) LogValue() slog.Value {
+	return slog.GroupValue(
+		slog.String("addr", c.Addr),
+		slog.String("log_level", c.LogLevel.String()),
+	)
+}
+
 // NewLogger returns a logger that writes JSON lines to w, one object per record,
 // from level up.
 func NewLogger(w io.Writer, level slog.Level) *slog.Logger {
