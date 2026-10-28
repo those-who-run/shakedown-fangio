@@ -17,7 +17,7 @@ func TestConfigLogsAsOneGroup(t *testing.T) {
 	if err := json.Unmarshal(buf.Bytes(), &record); err != nil {
 		t.Fatalf("not JSON: %v: %q", err, buf.String())
 	}
-	want := map[string]string{"addr": "127.0.0.1:9000", "log_level": "ERROR"}
+	want := map[string]string{"addr": "127.0.0.1:9000", "log_level": "WARN"}
 	if len(record.Config) != len(want) {
 		t.Fatalf("config = %v, want %v", record.Config, want)
 	}
