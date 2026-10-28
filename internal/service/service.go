@@ -43,7 +43,7 @@ func ConfigFromEnv(getenv func(string) string) (Config, error) {
 }
 
 // LogValue makes Config a slog.LogValuer, so logging the configuration at start-up
-// writes it as one group: addr and log_level.
+// writes it as one group: addr and log_level, the level in upper case (INFO).
 func (c Config) LogValue() slog.Value {
 	return slog.GroupValue(
 		slog.String("addr", c.Addr),
