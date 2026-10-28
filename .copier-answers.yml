@@ -1,0 +1,16 @@
+# Written by copier from those-who-run/chassis: what `copier update` needs to bring
+# the template's later changes in. Change it only through copier.
+_commit: v1.0.4
+_src_path: https://github.com/those-who-run/chassis.git
+description: 'The Fangio demo repository for Those Who Run v2
+
+    (those-who-run/paddock#28): a repository made from the `chassis`
+
+    template, to show that it passes CI and that an agent''s pull request
+
+    waits for the maintainer.
+
+    It is a demo, and is archived once the demo is recorded in paddock.'
+image: true
+name: shakedown-fangio
+title: shakedown-fangio
